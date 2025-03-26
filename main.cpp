@@ -1,6 +1,3 @@
-
-
-
 #include "required.h"
 #include "structs.h"
 #include "classinfo.h"
