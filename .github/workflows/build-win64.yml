@@ -1,0 +1,23 @@
+name: win-x86
+
+on:
+  push:
+    branches: ["zig"]
+  pull_request:
+    branches: [ "zig" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install zig
+        uses: mlugg/setup-zig@v1
+        with:
+          version: 0.13.0
+      - name: Build
+        run: zig build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: FrostbiteGen-win64
+          path: zig-out/bin/
