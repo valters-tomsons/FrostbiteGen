@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Install zig
         uses: mlugg/setup-zig@v1
         with:
